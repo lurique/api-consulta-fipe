@@ -4,8 +4,8 @@
   "description": "Aplicação NodeJS pura (sem frameworks / exceto pro Request sweat_smile) para consulta de valores de veículos através da Tabela FIPE. Essa API tem como objetivo prover informações para um Chatbot apartado que…",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./Fipe.js",
-    "dev": "nodemon --exec babel-node ./Fipe.js"
+    "start": "babel-node ./index.js",
+    "dev": "nodemon --exec babel-node ./index.js"
   },
   "repository": {
     "type": "git",

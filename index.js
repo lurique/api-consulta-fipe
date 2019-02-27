@@ -13,7 +13,7 @@ import {
 
 const server = http.createServer();
 const apiUrl = '/api/fipe/consulta';
-const port = 1234;
+const port = 1235;
 
 server.on('request', async (req, res) => {
 	const {headers, method, url} = req;
@@ -22,10 +22,10 @@ server.on('request', async (req, res) => {
 	// Logger(req, 'dev');
 
 	// Ignoring all requests outside the predefined host
-	if ( headers.host !== 'localhost:1234' ) return Response(res, 400, 'Requisições fora do host localhost:1234 estão desabilitadas.');
+	if ( headers.host !== 'localhost:1235' ) return Response(res, 400, 'Requisições fora do host localhost:1234 estão desabilitadas.');
 
 	// Ignoring methods that are not GET
-	if ( method !== 'GET' ) return Response(res, 400, 'Somente requisições GET são permitidas!');
+	if ( method !== 'GET' && method !== 'POST' ) return Response(res, 400, 'Somente requisições GET/POST são permitidas!');
 
 	// Defining allowed paths
 	let allowedPaths = new Map([
