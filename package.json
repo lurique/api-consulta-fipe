@@ -1,0 +1,30 @@
+{
+  "name": "api-consulta-fipe",
+  "version": "1.0.0",
+  "description": "Aplicação NodeJS pura (sem frameworks / exceto pro Request sweat_smile) para consulta de valores de veículos através da Tabela FIPE. Essa API tem como objetivo prover informações para um Chatbot apartado que…",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./Fipe.js",
+    "dev": "nodemon --exec babel-node ./Fipe.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lurique/api-consulta-fipe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lurique/api-consulta-fipe/issues"
+  },
+  "homepage": "https://github.com/lurique/api-consulta-fipe#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
