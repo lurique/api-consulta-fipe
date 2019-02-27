@@ -1,6 +1,6 @@
 import http from 'http';
 import request from 'request';
-import ErrResponse from './app/helpers/Error.helper';
+import Response from './app/helpers/Responses.helper';
 import Logger from './app/helpers/Logger.helper';
 
 import {
@@ -22,10 +22,10 @@ server.on('request', async (req, res) => {
 	// Logger(req, 'dev');
 
 	// Ignoring all requests outside the predefined host
-	if ( headers.host !== 'localhost:1234' ) return ErrResponse(res, 400, 'Requisições fora do host localhost:1234 estão desabilitadas.');
+	if ( headers.host !== 'localhost:1234' ) return Response(res, 400, 'Requisições fora do host localhost:1234 estão desabilitadas.');
 
 	// Ignoring methods that are not GET
-	if ( method !== 'GET' ) return ErrResponse(res, 400, 'Somente requisições GET são permitidas!');
+	if ( method !== 'GET' ) return Response(res, 400, 'Somente requisições GET são permitidas!');
 
 	// Defining allowed paths
 	let allowedPaths = new Map([
@@ -37,7 +37,7 @@ server.on('request', async (req, res) => {
 	]);
 
 	// Validating allowed paths
-	if ( !allowedPaths.get(url) ) return ErrResponse(res, 404, 'URL não encontrada.');
+	if ( !allowedPaths.get(url) ) return Response(res, 404, 'URL não encontrada.');
 	return allowedPaths.get(url)(request, req, res);
 });
 

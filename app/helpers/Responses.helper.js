@@ -1,4 +1,4 @@
-const SuccessResponse = (res, statusCode, message, body) => {
+const Response = (res, statusCode, message, body) => {
   let messageObject = {
 		status: statusCode,
     message: message,
@@ -10,4 +10,4 @@ const SuccessResponse = (res, statusCode, message, body) => {
 	res.end();
 }
 
-export default SuccessResponse;
+export default Response;
