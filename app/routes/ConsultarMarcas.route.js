@@ -15,7 +15,7 @@ const consultarMarcasDosVeiculos = async (fetch, req, res) => {
     form: JSON.parse(body)
   }
     
-  await fetch(options, function (error, response, body) {
+  await fetch(options, (error, response, body) => {
     if (error) return Response(res, 400, 'Ocorreu um erro ao listar as marcas dos veículos. Tente novamente mais tarde.', JSON.parse(error));
     return Response(res, 200, 'Marcas listadas com sucesso!', JSON.parse(body));
   });

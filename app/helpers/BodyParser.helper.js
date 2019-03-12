@@ -1,4 +1,6 @@
 const BodyParser = async (req) => {
+  if ( req.method !== 'POST' ) return Response(res, 401, 'Método não permitido.', []);
+
   let body = '';
   
   await req.on('data', chunk => {
